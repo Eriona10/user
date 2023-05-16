@@ -5,17 +5,17 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{95CE2011-1012-45AE-9B41-ADBE31A56082}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.Microservice", "User.Microservice\User.Microservice.csproj", "{158850A7-398A-406C-90FD-46E6B730B941}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pet.Microservice", "Pet.Microservice\Pet.Microservice.csproj", "{4A07213E-5E49-4FBF-A75E-9DD29637DE2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pet.Microservice", "Pet.Microservice\Pet.Microservice.csproj", "{4A07213E-5E49-4FBF-A75E-9DD29637DE2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Device.Microservice", "Device.Microservice\Device.Microservice.csproj", "{58EF1DDE-FC1B-4389-846B-EFF0BBEAFB51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Device.Microservice", "Device.Microservice\Device.Microservice.csproj", "{58EF1DDE-FC1B-4389-846B-EFF0BBEAFB51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Payment.Microservice", "Payment.Microservice\Payment.Microservice.csproj", "{F1534AAE-E685-4543-B1E9-DC5DFEE1A65F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment.Microservice", "Payment.Microservice\Payment.Microservice.csproj", "{F1534AAE-E685-4543-B1E9-DC5DFEE1A65F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Location.Microservice", "Location.Microservice\Location.Microservice.csproj", "{BE88BC8D-8684-4C8F-8C30-59CB0604AD3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Location.Microservice", "Location.Microservice\Location.Microservice.csproj", "{BE88BC8D-8684-4C8F-8C30-59CB0604AD3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway.WebApi", "Gateway.WebApi\Gateway.WebApi.csproj", "{2F6A4F10-8C95-4C01-B2F6-414FBA674BFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.WebApi", "Gateway.WebApi\Gateway.WebApi.csproj", "{2F6A4F10-8C95-4C01-B2F6-414FBA674BFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.Microservice", "User.Microservice\User.Microservice.csproj", "{C6849030-7333-45BC-818D-881D588754E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{158850A7-398A-406C-90FD-46E6B730B941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{158850A7-398A-406C-90FD-46E6B730B941}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{158850A7-398A-406C-90FD-46E6B730B941}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{158850A7-398A-406C-90FD-46E6B730B941}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A07213E-5E49-4FBF-A75E-9DD29637DE2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A07213E-5E49-4FBF-A75E-9DD29637DE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A07213E-5E49-4FBF-A75E-9DD29637DE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,16 +43,20 @@ Global
 		{2F6A4F10-8C95-4C01-B2F6-414FBA674BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F6A4F10-8C95-4C01-B2F6-414FBA674BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F6A4F10-8C95-4C01-B2F6-414FBA674BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6849030-7333-45BC-818D-881D588754E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6849030-7333-45BC-818D-881D588754E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6849030-7333-45BC-818D-881D588754E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6849030-7333-45BC-818D-881D588754E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{158850A7-398A-406C-90FD-46E6B730B941} = {95CE2011-1012-45AE-9B41-ADBE31A56082}
 		{4A07213E-5E49-4FBF-A75E-9DD29637DE2D} = {95CE2011-1012-45AE-9B41-ADBE31A56082}
 		{58EF1DDE-FC1B-4389-846B-EFF0BBEAFB51} = {95CE2011-1012-45AE-9B41-ADBE31A56082}
 		{F1534AAE-E685-4543-B1E9-DC5DFEE1A65F} = {95CE2011-1012-45AE-9B41-ADBE31A56082}
 		{BE88BC8D-8684-4C8F-8C30-59CB0604AD3A} = {95CE2011-1012-45AE-9B41-ADBE31A56082}
+		{C6849030-7333-45BC-818D-881D588754E9} = {95CE2011-1012-45AE-9B41-ADBE31A56082}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5BE177E-90C3-4D6D-A167-E0A11517D799}

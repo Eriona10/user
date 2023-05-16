@@ -1,0 +1,115 @@
+﻿@model SubmenuEditViewModel
+@{
+
+}
+
+<div class="modal-header">
+    <button class="btn btn-back" @*onclick="goBack('@AesCrypto.Enkrypt(Model.MId)')"*@  onclick="$('#modal-center-large').find('.modal-content').load('@Url.Action("_Edit", "Menu")?ide=@Model.Menu')">Back</button>
+    <h5 class="modal-title">Editimi i SubMenus: @Model.Name</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <form asp-action="_Edit" asp-controller="Submenu" class="noLoading" id="frmEditMenu" method="post" data-ajax="true" data-ajax-method="post" data-ajax-success="EditSuccess" role="form">
+        @Html.AntiForgeryToken()
+        <input asp-for="Id" hidden />
+        <div class="row form-group">
+            <div class="col-md-4">
+                <label asp-for="Name" class="required form-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger" />
+            </div>
+           
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4">
+                <label asp-for="Area" class="form-label"></label>
+                <input asp-for="Area" class="form-control" />
+                <span asp-validation-for="Area" class="text-danger" />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Controller" class="form-label"></label>
+                <input asp-for="Controller" class="form-control" />
+                <span asp-validation-for="Controller" class="text-danger" />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Action" class="form-label"></label>
+                <input asp-for="Action" class="form-control" />
+                <span asp-validation-for="Action" class="text-danger" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4">
+                <label asp-for="Policy" class="form-label"></label>
+                <input asp-for="Policy" class="form-control" />
+                <span asp-validation-for="Policy" class="text-danger" />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="OrdinalNumber" class="required form-label"></label>
+                <input asp-for="OrdinalNumber" class="form-control" />
+                <span asp-validation-for="OrdinalNumber" class="text-danger" />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Icon" class="required form-label"></label>
+                <input asp-for="Icon" class="form-control" />
+                <span asp-validation-for="Icon" class="text-danger" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4">
+                <label asp-for="StaysOpenFor" class="required form-label"></label>
+                <input asp-for="StaysOpenFor" class="form-control" />
+                <span asp-validation-for="StaysOpenFor" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="modal-footer modal-footer-uniform w-full justify-content-between">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Mbyll</button>
+            <button type="submit" class="btn btn-outline-primary">Ndrysho</button>
+        </div>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    var form = $('#frmEditMenu');
+    form.removeData('validator');
+    form.removeData('unobtrusiveValidation'); 
+    $.validator.unobtrusive.parse(form);
+
+    $(document).ready(function() {
+        SubmenuList();
+        function back(id){
+         $('#modal-center-large').find('.modal-content').load('@Url.Action("_Edit", "Submenu")?mid=' + MId+ '&ide='+ide)
+        $('#modal-center-large').find('.modal-content').load('@Url.Action("_Edit", "Menu")?ide=' + id, function() {
+                $('#modal-center-large').modal('toggle')
+
+    }
+    });
+    
+   
+
+    function SubmenuList() {
+        $('#listSubMenu').load('@Url.Action("_Index", "Submenu")?id=@Model.Id')
+    }
+    function EditSuccess(data) {
+        console.log(data);
+
+        if (data.errorNumber == ErrorNumber.SUCCESS) {
+            Swal.fire({
+                icon: 'success',
+                title: data.title,
+                text: data.errorDescription,
+                confirmButtonText: "Okay"
+            }).then(t => {
+                window.location.reload()
+            })
+        } else if (data.errorNumber == ErrorNumber.WARNING) {
+            Swal.fire({
+                icon: 'warning',
+                title: data.title,
+                text: data.ErrorDescription,
+                confirmButtonText: "Okay"
+            })
+        }
+    }
+</script>
