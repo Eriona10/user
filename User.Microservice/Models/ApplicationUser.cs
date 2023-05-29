@@ -3,13 +3,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace User.Microservice.Models
 {
-    public class ApplicationUser
+    public class ApplicationUser:IdentityUser
     {
 
         [StringLength(100)]
         public string FirstName { get; set; }
         [StringLength(100)]
         public string LastName { get; set; }
+        public string? Password { get; set; }
 
         [StringLength(450)]
         public string? RoleId { get; set; }

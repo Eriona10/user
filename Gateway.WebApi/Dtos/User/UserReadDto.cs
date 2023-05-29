@@ -1,17 +1,14 @@
 ﻿
-//namespace Gateway.WebApi.Dtos.User
-//{
-//    public class AspNetUsers
-//    {
+namespace Gateway.WebApi.Dtos.User
+{
+  public class UserReadDto
+{
+        public string Id { get; set; } = null!;
+        public string? Email { get; set; }
 
-//        public int Id { get; set; }
-//        public string Name { get; set; }
-//        public string Email { get; set; }
-
-//        public string FirstName { get; set; } = null!;
-
-//        public string LastName { get; set; } = null!;
+        public string? PasswordHash { get; set; }
 
 
-//    }
-//}
+
+}
+}

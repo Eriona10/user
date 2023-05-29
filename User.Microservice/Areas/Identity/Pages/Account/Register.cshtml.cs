@@ -22,6 +22,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
+
 namespace User.Microservice.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
@@ -34,14 +35,15 @@ namespace User.Microservice.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender emailSender;
         private readonly RoleManager<IdentityRole> _roleManager;
-
+    
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
             IUserStore<ApplicationUser> userStore,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender _emailSender,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager
+           )
 
         {
             _userManager = userManager;
@@ -51,6 +53,7 @@ namespace User.Microservice.Areas.Identity.Pages.Account
             _logger = logger;
             emailSender = _emailSender;
             _roleManager = roleManager;
+           
         }
 
         /// <summary>
@@ -71,8 +74,10 @@ namespace User.Microservice.Areas.Identity.Pages.Account
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
-        public string Email { get; set; }
+      
+        public string LastName { get; set; }
         public string Password { get; set; }
+        public string FirstName { get; set; }
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -131,15 +136,15 @@ namespace User.Microservice.Areas.Identity.Pages.Account
 
             Input = new InputModel()
             {
-                RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem
+                RoleList = _roleManager.Roles.Where(x => x.Name !="Admin").Select(i => new SelectListItem
                 {
-                    Text = i,
-                    Value = i
+                    Text = i.Name,
+                    Value = i.Name
                 })
 
         };
 
-    }
+        }
 
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)

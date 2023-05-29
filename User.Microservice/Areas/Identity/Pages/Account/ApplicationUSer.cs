@@ -4,5 +4,7 @@ namespace User.Microservice.Areas.Identity.Pages.Account
 {
     internal class ApplicationUSer
     {
+
+
     }
 }

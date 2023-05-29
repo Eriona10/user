@@ -1,21 +1,23 @@
-﻿//using Gateway.WebApi.Data.Entieties;
-//using Gateway.WebApi.Dtos.User;
-//using AutoMapper;
-//using FluentAssertions.Common;
-//using Gateway.WebApi.Profiles.User;
-//using Gateway.WebApi.ViewModel;
+﻿using Gateway.WebApi.Data.Entieties;
+using Gateway.WebApi.Dtos.User;
+using AutoMapper;
+using FluentAssertions.Common;
+using Gateway.WebApi.Profiles.User;
+using System.Drawing.Drawing2D;
 
-//namespace Gateway.WebApi.Profiles.User
-//{
-//    public class UserProfile : Profile
-//    {
 
-//        public UserProfile() {
+namespace Gateway.WebApi.Profiles.User
+{
+    public class UserProfile : Profile
+    {
 
-//           // CreateMap<AspNetUsers, UserViewModel>();
+        public UserProfile()
+        {
+            CreateMap<AspNetUsers, UserReadDto>();
 
-//            //CreateMap<UserCreateDto, AspNetUsers>();a
 
-//        }
-//    }
-//}
+            CreateMap<UserCreateDto, AspNetUsers>();
+
+        }
+    }
+}
